@@ -5,7 +5,8 @@ var options = {
   watermarkImagePath: './watermark.png',
   relativeSize: 5,
   opacity: 50,
-  position: 'Center'
+  position: 'Center',
+  watermarkedImageACL: 'public-read'
 }
 
 exports.handler = function(event, context) {

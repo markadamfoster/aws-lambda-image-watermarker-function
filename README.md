@@ -36,9 +36,12 @@ Note: it's best to create 2 copies of this function, one for testing with your
 dev environment, and one for production. The only differences between the two
 would be the trigger bucket you specify and the `S3_DESTINATION_BUCKET` value.
 
-## Making changes/updates
+## Making changes
 
-The only thing that should need to be changed would be to this function itself.
-This should be done by editing the code locally, zipping up the appropriate
-files (see step 4 above), and uploading that zip file to the correct place in S3
-Lambda.
+Most changes are actually needed to be made in my forked version of the [lambda-watermark](https://github.com/markadamfoster/lambda-watermark) library.
+
+After making edits:
+
+1. Command click (to select) the `node_modules`, `index.js`, and `watermark.png` files, choose "Compress" to create a .zip of just those files.
+2. Upload that .zip file to the appropriate place in AWS Lambda for testing.
+3. Once testing clears, upload the same .zip to the production-facing Lambda function.
